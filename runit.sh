@@ -1,0 +1,1 @@
+mvn test -Dtest="testRunner" -Dbrowser="chrome" -DADMIN_USERNAME="manoj@gopronto.io" -DADMIN_PASSWORD="Pronto$123"  -DINSTANCE="UX"
