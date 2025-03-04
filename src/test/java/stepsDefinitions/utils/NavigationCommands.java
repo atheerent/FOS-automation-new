@@ -39,7 +39,7 @@ public class NavigationCommands {
     public void navigate_to_page_of_pronto(String sub_directory) throws IOException {
         String instance = PropertyDriver.getPropertyConfig("INSTANCE");
         System.out.println("INSTANCE" + instance);
-        String url = "https://blaze.atheer.io";
+        String url = "https://" + instance + ".atheer.io/signin";
         System.out.println(" MAIN URL " + url);
         this.driver.navigate().to(url);
 
@@ -58,7 +58,7 @@ public class NavigationCommands {
     public void navigate_to_page_of_pronto(String sub_directory, String pageName) throws IOException {
         String sub_url = PropertyDriver.getPropertyData(sub_directory, pageName);
         String instance = PropertyDriver.getPropertyConfig("INSTANCE");
-        String url = "https://blaze.atheer.io";
+        String url = "https://" + instance + ".atheer.io/signin";
         this.driver.navigate().to(url);
     }
 }
