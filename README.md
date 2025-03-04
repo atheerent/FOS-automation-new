@@ -1,5 +1,5 @@
-# Luna project - Automation testing
-The Luna repository project is for test automation, smoke/regression testing, and automation scripting.
+# Atheer project - Automation testing
+The Atheer repository project is for test automation, smoke/regression testing, and automation scripting.
 
 ## What is it used for and why do we require it?
 This repository demonstrates how to utilise automation tools and scripts to perform software testing in the Pronto application.- Faster test execution compared to manual test
