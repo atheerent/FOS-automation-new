@@ -10,7 +10,9 @@ Feature: Verify successful login for Atheer user
     Then Enter email of admin user in "EMAIL_FIELD" field of "loginPage"
     Then Wait for 2 seconds
     Then Enter password of admin in "PASSWORD_FIELD" field of "loginPage"
-    Then Click on the "LOGIN_BUTTON" of "loginPage"
+    And Click on the "LOGIN_BUTTON" of "loginPage"
+    Then Wait for 2 seconds
+    And Verify presence of "LOGO_BUTTON" of "loginPage"
 
   Scenario: Quit the browser
     Given Quit the browser
