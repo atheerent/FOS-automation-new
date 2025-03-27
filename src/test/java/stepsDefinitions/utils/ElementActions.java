@@ -11,11 +11,9 @@ package stepsDefinitions.utils;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.Date;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.rules.Timeout;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,7 +28,6 @@ public class ElementActions {
     public WebDriver driver;
     public WebDriverWait wait;
     public JavascriptExecutor executor;
-    String isHcaptcha = "false";
 
     public ElementActions() {
         this.driver = DriverFactory.driver;

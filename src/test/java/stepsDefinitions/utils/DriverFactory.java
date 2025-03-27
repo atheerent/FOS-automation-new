@@ -85,13 +85,4 @@ public class DriverFactory {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         return wait;
     }
-
-	/*public  static void pageLoad() throws InterruptedException {
-		do{
-			Thread.sleep(1000);
-			jWait =(JavascriptExecutor)driver;
-			pageLoadStatus = (String) jWait.executeScript("return document.readyState");
-		} while(!pageLoadStatus.equals("complete"));
-		System.out.println("Page loaded"+ pageLoadStatus);
-	}*/
 }

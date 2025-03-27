@@ -24,7 +24,23 @@ hs_err_pid*
 replay_pid*
 .idea/workspace.xml
 .DS_Store
-/test-output
 /.idea
-/target
-/target
+target/
+dist/
+source
+test-output/
+tools/
+
+
+# Eclipse #
+bin/**
+
+# Maven #
+/.mvn
+/.maven
+/.repository
+.flattened-pom.xml
+
+src/test/java/resources/configuration/config.properties
+src/test/java/runner/testRunner.java
+/test-output
