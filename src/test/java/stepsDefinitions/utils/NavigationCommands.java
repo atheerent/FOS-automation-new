@@ -36,10 +36,11 @@ public class NavigationCommands {
     }
 
     @Given("Navigate to {string} page of Pronto")
-    public void navigate_to_page_of_pronto(String sub_directory) throws IOException {
+    public void navigate_to_page_of_pronto() throws IOException {
         String instance = PropertyDriver.getPropertyConfig("INSTANCE");
+        String environment = PropertyDriver.getPropertyConfig("ENVIRONMENT");
         System.out.println("INSTANCE" + instance);
-        String url = "https://" + instance + ".atheer.io/signin";
+        String url = "https://" + instance + ".atheer."+environment+ "/signin";
         System.out.println(" MAIN URL " + url);
         this.driver.navigate().to(url);
 

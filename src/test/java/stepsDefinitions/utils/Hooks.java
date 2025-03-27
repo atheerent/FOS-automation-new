@@ -39,7 +39,7 @@ public class Hooks {
         navigationCommands = new NavigationCommands();
 
         browsercmd.maximize_the_browser();
-        navigationCommands.navigate_to_page_of_pronto("ui/p/relationships/");
+        navigationCommands.navigate_to_page_of_pronto();
 
     }
 
