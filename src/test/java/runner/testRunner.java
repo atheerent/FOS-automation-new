@@ -20,7 +20,7 @@ import io.cucumber.junit.CucumberOptions;
         glue = "stepsDefinitions",
         dryRun = false,
         monochrome = true,
-        tags = "@111", //can use AND , OR, NOT conditions
+        tags = "@logout", //can use AND , OR, NOT conditions
         stepNotifications = true)
 
 public class testRunner {

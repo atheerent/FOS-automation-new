@@ -1,4 +1,4 @@
-@smoke @all @login @111
+@smoke @all @logout @111
 Feature: Verify successful login for Atheer user
 
   @atheerNavigationHook
@@ -12,7 +12,16 @@ Feature: Verify successful login for Atheer user
     Then Enter password of admin in "PASSWORD_FIELD" field of "loginPage"
     And Click on the "LOGIN_BUTTON" of "loginPage"
     Then Wait for 2 seconds
-    And Verify presence of "LOGO_BUTTON" of "loginPage"
+
+  Scenario: Verify user has been redirected to homepage
+    Given Verify presence of "LOGO_BUTTON" of "leftPanelAtheerPage"
+
+  Scenario: Verify logout functionality
+    Given Verify presence of "USER_ICON" of "leftPanelAtheerPage"
+    Then Click on the "USER_ICON" of "leftPanelAtheerPage"
+    Then Verify presence of "SIGNOUT_BUTTON" of "leftPanelAtheerPage"
+    Then Click on the "SIGNOUT_BUTTON" of "leftPanelAtheerPage"
+    Then Verify presence of "SIGNBACK_BUTTON" of "loginPage"
 
   Scenario: Quit the browser
     Given Quit the browser
