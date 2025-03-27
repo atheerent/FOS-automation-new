@@ -29,8 +29,8 @@ replay_pid*
 dist/
 source
 /test-output/
+test-output
 tools/
-/Users/bhaveshpanchal/Documents/Pronto/Github/Atheer/FOS-automation-new/test-output
 
 # Eclipse #
 bin/**
