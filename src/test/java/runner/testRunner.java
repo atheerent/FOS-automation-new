@@ -1,10 +1,6 @@
 package runner;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.runner.RunWith;
-
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
@@ -20,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
         glue = "stepsDefinitions",
         dryRun = false,
         monochrome = true,
-        tags = "@logout", //can use AND , OR, NOT conditions
+        tags = "@111", //can use AND , OR, NOT conditions
         stepNotifications = true)
 
 public class testRunner {

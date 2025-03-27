@@ -1,6 +1,6 @@
 <extentreports>
     <configuration>
-        <theme>standard</theme>
+        <theme>dark</theme>
         <encoding>utf-8</encoding>
         <documentTitle>Test Automation Report</documentTitle>
         <reportName>Extent Report</reportName>
