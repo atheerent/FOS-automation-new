@@ -25,10 +25,10 @@ replay_pid*
 .idea/workspace.xml
 .DS_Store
 /.idea
-target/
+/target/
 dist/
 source
-test-output/
+/test-output/
 tools/
 
 
@@ -43,4 +43,3 @@ bin/**
 
 src/test/java/resources/configuration/config.properties
 src/test/java/runner/testRunner.java
-/test-output
