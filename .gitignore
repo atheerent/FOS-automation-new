@@ -24,3 +24,6 @@ hs_err_pid*
 replay_pid*
 .idea/workspace.xml
 .DS_Store
+/test-output
+/.idea
+/target
