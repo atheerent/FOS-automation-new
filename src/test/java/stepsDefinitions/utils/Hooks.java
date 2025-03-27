@@ -33,13 +33,13 @@ public class Hooks {
         //this.wait=DriverFactory.waitDriver(); //unused
     }
 
-    @After("@prontoNavigationHook")
-    public void openPronto() throws IOException {
+    @After("@atheerNavigationHook")
+    public void openAtheer() throws IOException {
         browsercmd = new BrowserCommands();
         navigationCommands = new NavigationCommands();
 
         browsercmd.maximize_the_browser();
-        navigationCommands.navigate_to_page_of_pronto();
+        navigationCommands.navigate_to_page_of_atheer();
 
     }
 

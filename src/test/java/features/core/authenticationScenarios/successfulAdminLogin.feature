@@ -1,7 +1,7 @@
 @smoke @all @login @111
 Feature: Verify successful login for Atheer user
 
-  @prontoNavigationHook
+  @atheerNavigationHook
   Scenario: Open browser and navigate to login page
     Given Invoke "browser" browser
 

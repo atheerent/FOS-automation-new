@@ -35,8 +35,8 @@ public class NavigationCommands {
 
     }
 
-    @Given("Navigate to {string} page of Pronto")
-    public void navigate_to_page_of_pronto() throws IOException {
+    @Given("Navigate to {string} page of Atheer")
+    public void navigate_to_page_of_atheer() throws IOException {
         String instance = PropertyDriver.getPropertyConfig("INSTANCE");
         String environment = PropertyDriver.getPropertyConfig("ENVIRONMENT");
         System.out.println("INSTANCE" + instance);
