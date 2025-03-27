@@ -1,9 +1,0 @@
-<extentreports>
-    <configuration>
-        <theme>standard</theme>
-        <encoding>utf-8</encoding>
-        <documentTitle>Test Automation Report</documentTitle>
-        <reportName>Extent Report</reportName>
-        <timeStampFormat>yyyy-MM-dd HH:mm:ss</timeStampFormat>
-    </configuration>
-</extentreports>
