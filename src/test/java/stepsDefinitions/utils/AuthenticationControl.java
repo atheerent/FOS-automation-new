@@ -30,8 +30,8 @@ public class AuthenticationControl {
         this.wait = DriverFactory.waitDriver();
     }
 
-    @Given("Enter email of admin user in {string} field of {string}")
-    public void enter_email_of_admin_user_in_field_of(String locatorKey, String pageName) throws IOException {
+    @Given("Enter email of user in {string} field of {string}")
+    public void enter_email_of_user_in_field_of(String locatorKey, String pageName) throws IOException {
         String email = PropertyDriver.getPropertyConfig("USERNAME");
         String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
         try {
@@ -45,8 +45,8 @@ public class AuthenticationControl {
 
     }
 
-    @Then("Enter password of admin in {string} field of {string}")
-    public void enter_password_of_admin_in_field_of(String locatorKey, String pageName) throws IOException {
+    @Then("Enter password of user in {string} field of {string}")
+    public void enter_password_of_user_in_field_of(String locatorKey, String pageName) throws IOException {
         String password = PropertyDriver.getPropertyConfig("PASSWORD");
         String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
         try {

@@ -47,8 +47,8 @@ public class Hooks {
     public void login() throws IOException, InterruptedException, NullPointerException {
         authenticationControl = new AuthenticationControl();
         elementActions = new ElementActions();
-        authenticationControl.enter_email_of_admin_user_in_field_of("EMAIL_FIELD", "loginPage");
-        authenticationControl.enter_password_of_admin_in_field_of("PASSWORD_FIELD", "loginPage");
+        authenticationControl.enter_email_of_user_in_field_of("EMAIL_FIELD", "loginPage");
+        authenticationControl.enter_password_of_user_in_field_of("PASSWORD_FIELD", "loginPage");
         elementActions.click_on_the_of("LOGIN_BUTTON", "loginPage");
     }
 
