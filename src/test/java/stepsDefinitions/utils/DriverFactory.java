@@ -42,19 +42,7 @@ public class DriverFactory {
                         break;
                     case "chrome":
                         WebDriverManager.chromedriver().setup();
-                        ChromeOptions chromeoptions = new ChromeOptions();
-                        if (isHeadless.equalsIgnoreCase("true")) {
-                            chromeoptions.addArguments("--headless");
-                            chromeoptions.addArguments("--no-sandbox");
-                            chromeoptions.addArguments("--window-position=0,0");
-                            chromeoptions.addArguments("--remote-allow-origins=*");
-                            chromeoptions.addArguments("--incognito");
-                        }
-                        chromeoptions.addArguments("--no-sandbox");
-                        chromeoptions.addArguments("--window-position=0,0");
-                        chromeoptions.addArguments("--window-size=2560,1440");
-                        chromeoptions.addArguments("--remote-allow-origins=*");
-                        chromeoptions.addArguments("--incognito");
+                        ChromeOptions chromeoptions = getChromeOptions();
                         driver = new ChromeDriver(chromeoptions);
                         break;
                 }
@@ -79,6 +67,23 @@ public class DriverFactory {
                 driver = new ChromeDriver(chromeoptions);
                 break;
         }
+    }
+
+    private ChromeOptions getChromeOptions() {
+        ChromeOptions chromeoptions = new ChromeOptions();
+        if (isHeadless.equalsIgnoreCase("true")) {
+            chromeoptions.addArguments("--headless");
+            chromeoptions.addArguments("--no-sandbox");
+            chromeoptions.addArguments("--window-position=0,0");
+            chromeoptions.addArguments("--remote-allow-origins=*");
+            chromeoptions.addArguments("--incognito");
+        }
+        chromeoptions.addArguments("--no-sandbox");
+        chromeoptions.addArguments("--window-position=0,0");
+        chromeoptions.addArguments("--window-size=2560,1440");
+        chromeoptions.addArguments("--remote-allow-origins=*");
+        chromeoptions.addArguments("--incognito");
+        return chromeoptions;
     }
 
     public static WebDriverWait waitDriver() {
