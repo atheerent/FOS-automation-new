@@ -43,3 +43,4 @@ bin/**
 
 src/test/java/resources/configuration/config.properties
 src/test/java/runner/testRunner.java
+/src/test/java/resources/configuration/

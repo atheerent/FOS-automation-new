@@ -21,7 +21,7 @@ Feature: General Utils
 
   Scenario: Core functions
     Given Invoke "browser" browser
-    Then Navigate to "sub_directory" page of Pronto
+    Then Navigate to "sub_directory" page of Atheer
 
   @tag
   Scenario: Browser Commands [Open/Quit/Close browser]
@@ -32,18 +32,13 @@ Feature: General Utils
     Then Maximize the browser
     Then Refresh the current browser window
     Then Hard refresh the current browser window
-    #Then wait until Page is fully loaded
 
   Scenario: Navigation commands
     Given Navigate to "url" page
-    Then Navigate to "sub_directory" page of Pronto
+    Then Navigate to "sub_directory" page of Atheer
     Then Click on forward button in the browser window
     Then Click on back button in the browser window
 
-  #WIP
-  Scenario: Window handling commands
-    Given Switch to the window with "title_name" title
-    Then Close the window with "title_name" title
 
   Scenario: Handling alerts
     Given Cancel an alert
