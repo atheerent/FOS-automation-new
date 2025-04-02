@@ -33,12 +33,13 @@ Feature: Verify edit user scenario
     And Enter random name of "AK" of "MIDDLE_NAME_FIELD" of "userDetailsPage"
     And Enter random name of "ATHEER" of "PREFERRED_NAME_FIELD" of "userDetailsPage"
     And Enter random phone number of "PHONENUMBER_FIELD" of "userDetailsPage"
-    And Enter random name of "Location" of "LOCATION_FIELD" of "userDetailsPage"
-    And Enter random name of "QA" of "JOB_TITLE_FIELD" of "userDetailsPage"
-    And Enter random name of "Testing" of "JOB_DESCRIPTION_FIELD" of "userDetailsPage"
-    And Enter random name of "Development" of "DIVISION_FIELD" of "userDetailsPage"
-    And Enter random name of "Department" of "DEPARTMENT_FIELD" of "userDetailsPage"
+    And Enter a random location in "LOCATION_FIELD" field on "userDetailsPage"
+    And Enter a random job title in "JOB_TITLE_FIELD" field on "userDetailsPage"
+    And Enter a random job description in "JOB_DESCRIPTION_FIELD" field on "userDetailsPage"
+    And Enter a random job division in "DIVISION_FIELD" field on "userDetailsPage"
+    And Enter a random job department in "DEPARTMENT_FIELD" field on "userDetailsPage"
     Then Click on the "UPDATE_BUTTON" of "userDetailsPage"
     Then Wait for 10 seconds
 
-
+  Scenario: Quit the browser
+    Given Quit the browser
