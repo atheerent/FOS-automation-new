@@ -66,7 +66,7 @@ public class Hooks {
         elementActions.click_on_the_of("SAVE_BUTTON","userListingPage");
         browsercmd.waitForTime(5);
     }
-    
+
     @AfterStep
     public void AddScreenshot(Scenario scenario) {
 
