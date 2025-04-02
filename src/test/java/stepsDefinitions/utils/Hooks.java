@@ -56,6 +56,8 @@ public class Hooks {
         elementVerification.Verify_present_of_of("POPUP_CREATE_NEW_TITLE","userListingPage");
         randomNameStepDefinitions.enter_random_real_name_username("LOGIN_FIELD","userListingPage");
         randomNameStepDefinitions.enter_random_real_name_username("FIRST_NAME_FIELD","userListingPage");
+        elementActions.enter_random_name_in_of("AtheerTest","LOGIN_FIELD","userListingPage");
+        elementActions.enter_random_name_in_of("FNAME","FIRST_NAME_FIELD","userListingPage");
         elementActions.enter_random_name_in_of("LNAME","LAST_NAME_FIELD","userListingPage");
         elementActions.enter_random_email_alias_in_of("AtheerTest@atheerair.com","EMAIL_FIELD","userListingPage");
         authenticationControl.enter_password_of_user_in_field_of("PASSWORD_FIELD","userListingPage");
@@ -64,7 +66,7 @@ public class Hooks {
         elementActions.click_on_the_of("SAVE_BUTTON","userListingPage");
         browsercmd.waitForTime(5);
     }
-
+    
     @AfterStep
     public void AddScreenshot(Scenario scenario) {
 
