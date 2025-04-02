@@ -30,6 +30,7 @@ public class ElementVerification {
         try {
             this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
             this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+            System.out.println(locatorKey + " is visible on " + pageName);
         } catch (TimeoutException e) {
             System.out.println(locatorKey + " is not visible on " + pageName);
             e.printStackTrace();

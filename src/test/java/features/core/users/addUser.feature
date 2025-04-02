@@ -23,13 +23,13 @@ Feature: Verify create user scenario
     Then Verify presence of "POPUP_CREATE_NEW_TITLE" of "userListingPage"
     Then Enter a random real name username in "LOGIN_FIELD" field on "userListingPage"
     Then Enter a random real name username in "FIRST_NAME_FIELD" field on "userListingPage"
-    Then Enter a random real name username in "LAST_NAME_FIELD" field on "userListingPage"
+    And Enter random name of "Panchal" of "LAST_NAME_FIELD" of "userListingPage"
     And Enter random email alias of "test@atheerair.com" of "EMAIL_FIELD" of "userListingPage"
     And Enter password of user in "PASSWORD_FIELD" field of "userListingPage"
     And Enter password of user in "CONFIRM_PASSWORD_FIELD" field of "userListingPage"
     And Click on the "SEND_NOTIFICATION_TOGGLE_BUTTON" of "userListingPage"
     Then Click on the "SAVE_BUTTON" of "userListingPage"
-    Then Wait for 2 seconds
+    Then Wait for 5 seconds
     And Click on the "SEARCH_BUTTON" of "userListingPage"
     Then Search for the generated term in "SEARCHBAR_FIELD" of "userListingPage"
     Then Wait for 5 seconds

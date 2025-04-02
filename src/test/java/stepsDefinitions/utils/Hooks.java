@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import stepsDefinitions.core.users.randomNameStepDefinitions;
 
 //import com.aventstack.extentreports.gherkin.model.Scenario;
 
@@ -57,19 +58,21 @@ public class Hooks {
         elementActions = new ElementActions();
         elementVerification = new ElementVerification();
         authenticationControl = new AuthenticationControl();
+        randomNameStepDefinitions randomNameStepDefinitions = new randomNameStepDefinitions();
         browsercmd = new BrowserCommands();
         elementActions.click_on_the_of("CREATE_USER_NEW_BUTTON","userListingPage");
         elementActions.click_on_the_of("CREATE_NEW_BUTTON","userListingPage");
         elementVerification.Verify_present_of_of("POPUP_CREATE_NEW_TITLE","userListingPage");
-        elementActions.enter_random_name_in_of("AtheerTest","LOGIN_FIELD","userListingPage");
-        elementActions.enter_random_name_in_of("FNAME","FIRST_NAME_FIELD","userListingPage");
+        randomNameStepDefinitions.enter_random_real_name_username("LOGIN_FIELD","userListingPage");
+        randomNameStepDefinitions.enter_random_real_name_username("FIRST_NAME_FIELD","userListingPage");
+        randomNameStepDefinitions.enter_random_real_name_username("LAST_NAME_FIELD","userListingPage");
         elementActions.enter_random_name_in_of("LNAME","LAST_NAME_FIELD","userListingPage");
         elementActions.enter_random_email_alias_in_of("AtheerTest@atheerair.com","EMAIL_FIELD","userListingPage");
         authenticationControl.enter_password_of_user_in_field_of("PASSWORD_FIELD","userListingPage");
         authenticationControl.enter_password_of_user_in_field_of("CONFIRM_PASSWORD_FIELD","userListingPage");
         elementActions.click_on_the_of("SEND_NOTIFICATION_TOGGLE_BUTTON","userListingPage");
         elementActions.click_on_the_of("SAVE_BUTTON","userListingPage");
-        browsercmd.waitForTime(3);
+        browsercmd.waitForTime(5);
     }
 
 
