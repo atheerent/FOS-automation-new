@@ -219,8 +219,6 @@ public class ElementActions {
             throw e;
         }
     }
-
-
     @Then("Search for the generated term in {string} of {string}")
     public void search_for_generated_term(String locatorKey, String pageName) throws IOException {
         String randomUsername = searchContext.getContext("lastGeneratedUsername");
