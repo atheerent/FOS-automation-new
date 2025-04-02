@@ -44,13 +44,42 @@ public class Hooks {
     }
 
     @Before("@SuperUserLoginHook")
-    public void login() throws IOException, InterruptedException, NullPointerException {
+    public void login() throws IOException, NullPointerException {
         authenticationControl = new AuthenticationControl();
         elementActions = new ElementActions();
         authenticationControl.enter_email_of_user_in_field_of("EMAIL_FIELD", "loginPage");
         authenticationControl.enter_password_of_user_in_field_of("PASSWORD_FIELD", "loginPage");
         elementActions.click_on_the_of("LOGIN_BUTTON", "loginPage");
     }
+
+    @Before("@createUserHook")
+    public void createUser() throws NullPointerException, IOException, InterruptedException {
+        elementActions = new ElementActions();
+        elementVerification = new ElementVerification();
+        authenticationControl = new AuthenticationControl();
+        browsercmd = new BrowserCommands();
+        elementActions.click_on_the_of("CREATE_USER_NEW_BUTTON","userListingPage");
+        elementActions.click_on_the_of("CREATE_NEW_BUTTON","userListingPage");
+        elementVerification.Verify_present_of_of("POPUP_CREATE_NEW_TITLE","userListingPage");
+        elementActions.enter_random_name_in_of("AtheerTest","LOGIN_FIELD","userListingPage");
+        elementActions.enter_random_name_in_of("FNAME","FIRST_NAME_FIELD","userListingPage");
+        elementActions.enter_random_name_in_of("LNAME","LAST_NAME_FIELD","userListingPage");
+        elementActions.enter_random_email_alias_in_of("AtheerTest@atheerair.com","EMAIL_FIELD","userListingPage");
+        authenticationControl.enter_password_of_user_in_field_of("PASSWORD_FIELD","userListingPage");
+        authenticationControl.enter_password_of_user_in_field_of("CONFIRM_PASSWORD_FIELD","userListingPage");
+        elementActions.click_on_the_of("SEND_NOTIFICATION_TOGGLE_BUTTON","userListingPage");
+        elementActions.click_on_the_of("SAVE_BUTTON","userListingPage");
+        browsercmd.waitForTime(3);
+    }
+
+
+
+
+
+
+
+
+
 
     @AfterStep
     public void AddScreenshot(Scenario scenario) {
