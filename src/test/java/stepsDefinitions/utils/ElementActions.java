@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
@@ -219,6 +220,7 @@ public class ElementActions {
         }
     }
 
+
     @Then("Search for the generated term in {string} of {string}")
     public void search_for_generated_term(String locatorKey, String pageName) throws IOException {
         String randomUsername = searchContext.getContext("lastGeneratedUsername");
@@ -240,6 +242,33 @@ public class ElementActions {
             e.printStackTrace();
             throw e;
         }
+    }
+
+    @Then("Enter random phone number of {string} of {string}")
+    public void enter_random_phone_number_in_of(String locatorKey, String pageName) throws IOException {
+        String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
+        // Generate a random phone number in the format XXX-XXX-XXXX
+        String randomPhoneNumber = generateRandomPhoneNumber();
+        searchContext.setContext("lastGeneratedPhoneNumber", randomPhoneNumber);
+        try {
+            this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+            WebElement element = this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+            element.sendKeys(randomPhoneNumber);
+        } catch (TimeoutException e) {
+            System.out.println(locatorKey + " is not present on " + pageName);
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    // Method to generate a random phone number
+    private String generateRandomPhoneNumber() {
+        Random random = new Random();
+        int areaCode = 100 + random.nextInt(900); // Area code between 100 and 999
+        int centralOfficeCode = 100 + random.nextInt(900); // Central office code between 100 and 999
+        int lineNumber = 1000 + random.nextInt(9000); // Line number between 1000 and 9999
+
+        return String.format("%03d-%03d-%04d", areaCode, centralOfficeCode, lineNumber);
     }
 
 
