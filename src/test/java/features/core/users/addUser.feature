@@ -27,6 +27,7 @@ Feature: Verify create user scenario
     And Enter random name of "Bhavesh" of "FIRST_NAME_FIELD" of "userListingPage"
     And Enter random name of "Panchal" of "LAST_NAME_FIELD" of "userListingPage"
     Then Enter a random real name username in "LAST_NAME_FIELD" field on "userListingPage"
+    And Enter random name of "Panchal" of "LAST_NAME_FIELD" of "userListingPage"
     And Enter random email alias of "test@atheerair.com" of "EMAIL_FIELD" of "userListingPage"
     And Enter password of user in "PASSWORD_FIELD" field of "userListingPage"
     And Enter password of user in "CONFIRM_PASSWORD_FIELD" field of "userListingPage"
