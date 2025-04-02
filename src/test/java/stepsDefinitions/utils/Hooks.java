@@ -43,7 +43,7 @@ public class Hooks {
 
     }
 
-    @Before("@adminLoginHook")
+    @Before("@SuperUserLoginHook")
     public void login() throws IOException, InterruptedException, NullPointerException {
         authenticationControl = new AuthenticationControl();
         elementActions = new ElementActions();

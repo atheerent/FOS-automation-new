@@ -67,9 +67,14 @@ public class ElementActions {
     @Then("Enter random email alias of {string} of {string} of {string}")
     public void enter_random_email_alias_in_of(String text, String locatorKey, String pageName) throws IOException {
         String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
+        if (!text.contains("@")) {
+            throw new IllegalArgumentException("❌ Error: Provided text '" + text + "' is not a valid email format.");
+        }
+
         String[] parts = text.split("@");
         String generatedString = RandomStringUtils.randomNumeric(3);
         String email_address = parts[0] + "+" + generatedString + "@" + parts[1];
+        System.out.println("Email address generated : " + email_address);
         try {
             this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
             WebElement element = this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
@@ -85,11 +90,11 @@ public class ElementActions {
     public void click_on_the_of(String locatorKey, String pageName) throws IOException {
         String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
 
-            this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
-            this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-            this.wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-            WebElement element = driver.findElement(By.xpath(locator));
-            element.click();
+        this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+        this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        this.wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+        WebElement element = driver.findElement(By.xpath(locator));
+        element.click();
 
     }
 
@@ -186,17 +191,56 @@ public class ElementActions {
         } catch (StaleElementReferenceException | ElementNotInteractableException | IllegalArgumentException |
                  NoSuchElementException e) {
             executor = (JavascriptExecutor) driver;
-            executor.executeScript("arguments[0].click();",
-                    this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator))),
-                    ExpectedConditions.presenceOfElementLocated(By.xpath(locator)),
-                    ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+            executor.executeScript("arguments[0].click();", this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator))), ExpectedConditions.presenceOfElementLocated(By.xpath(locator)), ExpectedConditions.elementToBeClickable(By.xpath(locator)));
         } catch (TimeoutException e) {
             System.out.println(locatorKey + " is not present on " + pageName);
             e.printStackTrace();
             throw e;
         }
-
         Thread.sleep(1500);
     }
+
+    @Then("Enter random name of {string} of {string} of {string}")
+    public void enter_random_name_in_of(String baseUsername, String locatorKey, String pageName) throws IOException {
+        String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
+        // Generate a random alphanumeric string of length 5
+        String generatedString = RandomStringUtils.randomNumeric(4);
+        // Append the random string to the base username
+        String randomUsername = baseUsername + "_" + generatedString;
+        searchContext.setContext("lastGeneratedUsername", randomUsername);
+        try {
+            this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+            WebElement element = this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+            element.sendKeys(randomUsername);
+        } catch (TimeoutException e) {
+            System.out.println(locatorKey + " is not present on " + pageName);
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    @Then("Search for the generated term in {string} of {string}")
+    public void search_for_generated_term(String locatorKey, String pageName) throws IOException {
+        String randomUsername = searchContext.getContext("lastGeneratedUsername");
+
+        if (randomUsername == null) {
+            throw new IllegalStateException("No search term has been generated yet.");
+        }
+
+        String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
+
+        try {
+            this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+            WebElement searchBox = this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+            searchBox.sendKeys(randomUsername);
+            searchBox.sendKeys(Keys.ENTER); // Simulating search action
+            System.out.println("Searching for: " + randomUsername);
+        } catch (TimeoutException e) {
+            System.out.println(locatorKey + " is not present on " + pageName);
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
 
 }
