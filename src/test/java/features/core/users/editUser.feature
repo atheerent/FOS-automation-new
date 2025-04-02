@@ -39,6 +39,7 @@ Feature: Verify edit user scenario
     And Enter a random job division in "DIVISION_FIELD" field on "userDetailsPage"
     And Enter a random job department in "DEPARTMENT_FIELD" field on "userDetailsPage"
     Then Click on the "UPDATE_BUTTON" of "userDetailsPage"
+    Then Wait for 10 seconds
 
   Scenario: Quit the browser
     Given Quit the browser

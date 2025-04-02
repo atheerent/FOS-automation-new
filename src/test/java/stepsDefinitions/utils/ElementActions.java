@@ -242,7 +242,7 @@ public class ElementActions {
             throw e;
         }
     }
-
+    
     @Then("Enter random phone number of {string} of {string}")
     public void enter_random_phone_number_in_of(String locatorKey, String pageName) throws IOException {
         String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
