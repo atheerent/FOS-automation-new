@@ -1,21 +1,12 @@
 package stepsDefinitions.utils;
 
 import java.io.IOException;
-
-//import org.apache.commons.io.FileUtils;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stepsDefinitions.core.users.randomNameStepDefinitions;
-
-//import com.aventstack.extentreports.gherkin.model.Scenario;
-
-//import io.cucumber.core.api.Scenario;
-
-//import cucumber.api.Scenario;
-//import com.aventstack.extentreports.gherkin.model.Scenario;
 
 public class Hooks {
 
@@ -73,15 +64,6 @@ public class Hooks {
         elementActions.click_on_the_of("SAVE_BUTTON","userListingPage");
         browsercmd.waitForTime(5);
     }
-
-
-
-
-
-
-
-
-
 
     @AfterStep
     public void AddScreenshot(Scenario scenario) {

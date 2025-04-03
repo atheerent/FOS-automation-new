@@ -16,7 +16,6 @@ Feature: Verify delete user scenario
     And Click on the "USER_MENU_BUTTON" of "leftPanelAtheerPage"
     Then Verify presence of "USER_TITLE" of "userListingPage"
 
-
   @createUserHook
   Scenario: delete recently created user
     Given Click on the "SEARCH_BUTTON" of "userListingPage"
