@@ -259,14 +259,4 @@ public class ElementActions {
             throw e;
         }
     }
-
-    // Method to generate a random phone number
-    private String generateRandomPhoneNumber() {
-        Random random = new Random();
-        int areaCode = 100 + random.nextInt(900); // Area code between 100 and 999
-        int centralOfficeCode = 100 + random.nextInt(900); // Central office code between 100 and 999
-        int lineNumber = 1000 + random.nextInt(9000); // Line number between 1000 and 9999
-
-        return String.format("%03d-%03d-%04d", areaCode, centralOfficeCode, lineNumber);
-    }
 }
