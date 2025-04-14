@@ -25,7 +25,7 @@ Feature: Verify user can start the 1:1 conversation from Atheer web
   Scenario:Select first user and send message
     Given Click on the "SEARCH_BUTTON" of "userListingPage"
     Then Search for the generated term in "SEARCHBAR_FIELD" of "userListingPage"
-    Then Wait for 5 seconds
+    Then Wait for 3 seconds
     Then Click on the "SELECT_FIRST_CHECKBOX" of "conversationPage"
     Then Click on the "SELECT_BUTTON" of "conversationPage"
     And  Wait for 2 seconds

@@ -22,7 +22,7 @@ Feature: Verify user can add member to group conversation from Atheer web App
     Then Click on the "CONVERSATION_BUTTON" of "conversationPage"
     Then Click on the "GROUP_CONVERSATION_BUTTON" of "conversationPage"
     Then Click on the "GROUP_NAME_TEXT_FIELD" of "conversationPage"
-    Then Enter "Automation Group" in "GROUP_NAME_TEXT_FIELD" of "conversationPage"
+    Then Enter a random real name username in "GROUP_NAME_TEXT_FIELD" field on "conversationPage"
     Then Click on the "ADD_USER_BUTTON" of "conversationPage"
     Then Click on the "SELECT_FIRST_CHECKBOX" of "conversationPage"
     Then Click on the "SELECT_BUTTON" of "conversationPage"
@@ -33,7 +33,7 @@ Feature: Verify user can add member to group conversation from Atheer web App
     Then Click on the "ADD_USER_TO_CONVERSATION_BUTTON" of "conversationPage"
     Then Click on the "SEARCH_BUTTON" of "userListingPage"
     Then Search for the generated term in "SEARCHBAR_FIELD" of "userListingPage"
-    Then Wait for 5 seconds
+    Then Wait for 3 seconds
     Then Click on the "SELECT_FIRST_CHECKBOX" of "conversationPage"
     Then Click on the "SELECT_BUTTON" of "conversationPage"
     Then Enter "Hi,This is atheer automation group" in "CONVERSATION_TYPE_MESSAGE_FIELD" of "conversationPage"

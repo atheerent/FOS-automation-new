@@ -14,7 +14,7 @@ Feature: Verify user can leave the group conversation from Atheer web App
     Then Click on the "CONVERSATION_BUTTON" of "conversationPage"
     Then Click on the "GROUP_CONVERSATION_BUTTON" of "conversationPage"
     Then Click on the "GROUP_NAME_TEXT_FIELD" of "conversationPage"
-    Then Enter "Automation Group" in "GROUP_NAME_TEXT_FIELD" of "conversationPage"
+    Then Enter a random real name username in "GROUP_NAME_TEXT_FIELD" field on "conversationPage"
     Then Click on the "ADD_USER_BUTTON" of "conversationPage"
     Then Click on the "SELECT_ALL_USER" of "conversationPage"
     Then Click on the "SELECT_BUTTON" of "conversationPage"

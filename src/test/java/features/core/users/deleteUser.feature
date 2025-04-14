@@ -20,7 +20,7 @@ Feature: Verify delete user scenario
   Scenario: delete recently created user
     Given Click on the "SEARCH_BUTTON" of "userListingPage"
     Then Search for the generated term in "SEARCHBAR_FIELD" of "userListingPage"
-    Then Wait for 5 seconds
+    Then Wait for 3 seconds
     Then Verify presence of "USER_MOREOPTION_BUTTON" of "userListingPage"
     And Click on the "USER_MOREOPTION_BUTTON" of "userListingPage"
     Then Click on the "DELETE_USER_BUTTON" of "userListingPage"
