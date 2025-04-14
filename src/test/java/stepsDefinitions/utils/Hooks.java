@@ -62,7 +62,7 @@ public class Hooks {
         authenticationControl.enter_password_of_user_in_field_of("CONFIRM_PASSWORD_FIELD","userListingPage");
         elementActions.click_on_the_of("SEND_NOTIFICATION_TOGGLE_BUTTON","userListingPage");
         elementActions.click_on_the_of("SAVE_BUTTON","userListingPage");
-        browsercmd.waitForTime(5);
+        browsercmd.waitForTime(2);
     }
 
     @AfterStep

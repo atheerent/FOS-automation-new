@@ -21,7 +21,7 @@ Feature: Verify edit user scenario
   Scenario: Edit recently created user
     Given Click on the "SEARCH_BUTTON" of "userListingPage"
     Then Search for the generated term in "SEARCHBAR_FIELD" of "userListingPage"
-    Then Wait for 5 seconds
+    Then Wait for 3 seconds
     Then Verify presence of "EDIT_USER_BUTTON" of "userListingPage"
     Then Click on the "EDIT_USER_BUTTON" of "userListingPage"
     Then Verify presence of "USERDETAILS_TITLE" of "userDetailsPage"

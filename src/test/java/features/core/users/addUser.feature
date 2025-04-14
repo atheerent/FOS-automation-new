@@ -29,10 +29,10 @@ Feature: Verify create user scenario
     And Enter password of user in "CONFIRM_PASSWORD_FIELD" field of "userListingPage"
     And Click on the "SEND_NOTIFICATION_TOGGLE_BUTTON" of "userListingPage"
     Then Click on the "SAVE_BUTTON" of "userListingPage"
-    Then Wait for 5 seconds
+    Then Wait for 3 seconds
     And Click on the "SEARCH_BUTTON" of "userListingPage"
     Then Search for the generated term in "SEARCHBAR_FIELD" of "userListingPage"
-    Then Wait for 5 seconds
+    Then Wait for 3 seconds
     Then Verify presence of "USER_MOREOPTION_BUTTON" of "userListingPage"
 
   Scenario: Quit the browser
