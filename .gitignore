@@ -31,7 +31,8 @@ source
 /test-output/
 test-output
 tools/
-
+runner
+/runner
 # Eclipse #
 bin/**
 
