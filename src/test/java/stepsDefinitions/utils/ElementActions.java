@@ -242,21 +242,5 @@ public class ElementActions {
             throw e;
         }
     }
-
-    @Then("Enter random phone number of {string} of {string}")
-    public void enter_random_phone_number_in_of(String locatorKey, String pageName) throws IOException {
-        String locator = PropertyDriver.getPropertyData(locatorKey, pageName);
-        // Generate a random phone number in the format XXX-XXX-XXXX
-        String randomPhoneNumber = generateRandomPhoneNumber();
-        searchContext.setContext("lastGeneratedPhoneNumber", randomPhoneNumber);
-        try {
-            this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-            WebElement element = this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
-            element.sendKeys(randomPhoneNumber);
-        } catch (TimeoutException e) {
-            System.out.println(locatorKey + " is not present on " + pageName);
-            e.printStackTrace();
-            throw e;
-        }
-    }
+    
 }
