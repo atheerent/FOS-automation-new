@@ -58,7 +58,7 @@ public class uploadActions {
         String projectPath = System.getProperty("user.dir");
 
         // Construct the public S3 file URL
-        String fileUrl = "https://bhavesh-aws-test.s3.ap-south-1.amazonaws.com/" + text;
+        String fileUrl = "https://atheer-automation-bucket.s3.ap-south-1.amazonaws.com/" + text;
 
         // Download the file from public URL
         File targetFile = new File(projectPath + "/src/test/java/resources/importFiles/" + text);
@@ -66,7 +66,7 @@ public class uploadActions {
 
         // Locate and interact with the element
         WebElement element = this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-        Thread.sleep(3500); // You can fine-tune/remove this wait if needed
+        Thread.sleep(2000); // You can fine-tune/remove this wait if needed
         element.sendKeys(targetFile.getAbsolutePath());
     }
 
