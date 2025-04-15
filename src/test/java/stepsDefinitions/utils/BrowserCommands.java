@@ -18,9 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Then;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
-import java.util.ArrayList;
 
 public class BrowserCommands {
 
@@ -75,6 +73,12 @@ public class BrowserCommands {
     public void hard_refresh_the_current_browser_window() {
         // WIP
         driver.navigate().refresh();
+    }
+
+    @Then("Press Enter key")
+    public void pressEnterKey() {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ENTER).perform();
     }
 
     @Then("Scroll up")

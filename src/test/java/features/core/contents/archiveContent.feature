@@ -1,5 +1,5 @@
-@smoke @all @content @addAnnouncementContent
-Feature: Verify user can add Announcement in the content section
+@smoke @all @content @archiveContent
+Feature: Verify user can archive content in the content section
 
   @atheerNavigationHook
   Scenario: Open browser and navigate to login page
@@ -16,7 +16,7 @@ Feature: Verify user can add Announcement in the content section
     And Click on the "CONTENT_MENU_BUTTON" of "leftPanelAtheerPage"
     Then Verify presence of "CONTENT_TITLE" of "contentListingPage"
 
-  Scenario: Create Announcement content
+  Scenario: create Announcement content
     Given Verify presence of "CREATE_CONTENT_NEW_BUTTON" of "contentListingPage"
     And Click on the "CREATE_CONTENT_NEW_BUTTON" of "contentListingPage"
     Then Click on the "ANNOUNCEMENT_CONTENT_OPTION" of "contentListingPage"
@@ -35,8 +35,18 @@ Feature: Verify user can add Announcement in the content section
     And Click on the "SEARCH_BUTTON" of "contentListingPage"
     Then Search for the random content in "SEARCHBAR_FIELD" of "contentListingPage"
     Then Wait for 2 seconds
-    Then Verify presence of "LIST_CONTENT_TITLE" of "contentListingPage"
+
+  Scenario: archive created announcement
+    Given Verify presence of "LIST_CONTENT_TITLE" of "contentListingPage"
+    Then Click on the "SEARCH_CANCEL_BUTTON" of "userListingPage"
+    Then Click on the "MORE_CONTENT_BUTTON" of "contentListingPage"
+    Then Click on the "ARCHIVE_CONTENT_OPTION" of "contentListingPage"
+    Then Click on the "CONFIRM_ARCHIVE_BUTTON" of "contentListingPage"
+    Then Wait for 3 seconds
+    And Click on the "SEARCH_BUTTON" of "contentListingPage"
+    Then Search for the random content in "SEARCHBAR_FIELD" of "contentListingPage"
+    Then Wait for 2 seconds
+    Then Verify absence of "LIST_CONTENT_TITLE" of "contentListingPage"
 
   Scenario: Quit the browser
     Given Quit the browser
-

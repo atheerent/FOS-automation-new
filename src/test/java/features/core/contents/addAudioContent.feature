@@ -1,5 +1,5 @@
-@smoke @all @content @addAnnouncementContent
-Feature: Verify user can add Announcement in the content section
+@smoke @all @content @addAudioContent
+Feature: Verify user can upload Audio in the content section
 
   @atheerNavigationHook
   Scenario: Open browser and navigate to login page
@@ -16,20 +16,22 @@ Feature: Verify user can add Announcement in the content section
     And Click on the "CONTENT_MENU_BUTTON" of "leftPanelAtheerPage"
     Then Verify presence of "CONTENT_TITLE" of "contentListingPage"
 
-  Scenario: Create Announcement content
+  Scenario: Create Audio content
     Given Verify presence of "CREATE_CONTENT_NEW_BUTTON" of "contentListingPage"
     And Click on the "CREATE_CONTENT_NEW_BUTTON" of "contentListingPage"
-    Then Click on the "ANNOUNCEMENT_CONTENT_OPTION" of "contentListingPage"
+    Then Click on the "AUDIO_CONTENT_OPTION" of "contentListingPage"
+    Then Click on the "SELECT_UPLOAD_BUTTON" of "contentListingPage"
+    Then Import a file "content_Audio.mp3" from "UPLOAD_FILE" of page "contentDetailsPage"
     Then Verify presence of "CONTENT_TITLE_FIELD" of "contentDetailsPage"
     Then Clear the "CONTENT_TITLE_FIELD" from "contentDetailsPage"
-    Then Enter a random name with "- Announcement" in "CONTENT_TITLE_FIELD" field on "contentDetailsPage"
-    Then Enter a random text in "TEXT_AREA" field on "contentDetailsPage"
+    Then Enter a random name with ".mp3" in "CONTENT_TITLE_FIELD" field on "contentDetailsPage"
     Then Click on the "TEAM_EXPAND_BUTTON" of "contentDetailsPage"
     Then Click on the "PLUS_ICON" of "contentDetailsPage"
     Then Wait for 2 seconds
     Then Click on the "SELECT_ALL_CHECKBOX" of "contentDetailsPage"
     Then Click on the "SELECT_BUTTON" of "contentDetailsPage"
     Then Click on the "SAVE_BUTTON" of "contentDetailsPage"
+    Then Verify presence of "CONTENT_SAVE_NOTIFICATION" of "contentDetailsPage"
     Then Click on the "GO_BACK_BUTTON" of "contentDetailsPage"
     Then Wait for 3 seconds
     And Click on the "SEARCH_BUTTON" of "contentListingPage"
@@ -39,4 +41,3 @@ Feature: Verify user can add Announcement in the content section
 
   Scenario: Quit the browser
     Given Quit the browser
-

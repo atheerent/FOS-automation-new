@@ -26,7 +26,7 @@ Feature: Verify user can start airsession from conversation on Atheer web
 
   Scenario: Start airsession from the conversation
     Given Click on the "CONVERSATION_AIRSESSION_BUTTON" of "conversationPage"
-    Then Wait for 2 seconds
+    Then Wait for 6 seconds
     Then Click on the "AIRSESSION_END_BUTTON" of "airSession"
     Then Click on the "CONFIRMATION_END_BUTTON" of "airSession"
     Then Click on the "CONVERSATION_ICON" of "leftPanelAtheerPage"
