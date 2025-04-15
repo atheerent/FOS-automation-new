@@ -32,7 +32,9 @@ Feature: Verify XLS import user scenario
     Then Enter "Auto" in "SEARCHBAR_FIELD" of "userListingPage"
     Then Wait for 2 seconds
     And Click on the "SELECT_ALL_BUTTON" of "userListingPage"
+    Then Wait for 2 seconds
     And Click on the "DELETE_BUTTON" of "userListingPage"
+    Then Wait for 2 seconds
     Then Click on the "CONFIRM_DELETE" of "userListingPage"
     Then Wait for 2 seconds
 
