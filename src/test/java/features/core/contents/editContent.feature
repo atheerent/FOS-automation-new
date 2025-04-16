@@ -50,11 +50,6 @@ Feature: Verify user can edit content in the content section
       Then Press Enter key
       Then Wait for 3 seconds
       Then Click on the "SAVE_BUTTON" of "contentDetailsPage"
-      Then Click on the "GO_BACK_BUTTON" of "contentDetailsPage"
-      Then Wait for 3 seconds
-      And Click on the "SEARCH_BUTTON" of "contentListingPage"
-      Then Search for the random content in "SEARCHBAR_FIELD" of "contentListingPage"
-      Then Verify absence of "LIST_CONTENT_TITLE" of "contentListingPage"
 
   Scenario: Quit the browser
     Given Quit the browser

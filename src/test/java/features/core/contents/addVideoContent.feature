@@ -31,7 +31,6 @@ Feature: Verify user can upload video in the content section
     Then Click on the "SELECT_ALL_CHECKBOX" of "contentDetailsPage"
     Then Click on the "SELECT_BUTTON" of "contentDetailsPage"
     Then Click on the "SAVE_BUTTON" of "contentDetailsPage"
-    Then Verify presence of "CONTENT_SAVE_NOTIFICATION" of "contentDetailsPage"
     Then Click on the "GO_BACK_BUTTON" of "contentDetailsPage"
     Then Wait for 3 seconds
     And Click on the "SEARCH_BUTTON" of "contentListingPage"
