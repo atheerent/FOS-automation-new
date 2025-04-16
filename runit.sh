@@ -1,1 +1,1 @@
-mvn test -Dtest="testRunner" -Dbrowser="chrome" -D_USERNAME="csarvaiya@atheerair.com" -D_PASSWORD="Atheer@123"  -DINSTANCE="star" -DENVIRONMENT="QA"
+mvn test -Dtest="testRunner" -Dbrowser="chrome" -D_USERNAME="???" -D_PASSWORD="???"  -DINSTANCE="star" -DENVIRONMENT="QA"
