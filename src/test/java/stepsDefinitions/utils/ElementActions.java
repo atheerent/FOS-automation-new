@@ -12,8 +12,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -95,8 +93,18 @@ public class ElementActions {
         this.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
         this.wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
         WebElement element = driver.findElement(By.xpath(locator));
+        highlightElement(element);
         element.click();
 
+    }
+
+    private void highlightElement(WebElement element) {
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].style.border='2px solid red';", element);
+        } catch (Exception e) {
+            System.err.println("Unable to highlight element.");
+        }
     }
 
     //To clear text from field.

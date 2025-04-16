@@ -82,7 +82,7 @@ public class DriverFactory {
     }
 
     public static WebDriverWait waitDriver() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         return wait;
     }
 }
